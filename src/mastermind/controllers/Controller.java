@@ -1,6 +1,7 @@
 package mastermind.controllers;
 
 import mastermind.models.*;
+import mastermind.views.ViewPrototype;
 
 public abstract class Controller {
     
@@ -10,5 +11,9 @@ public abstract class Controller {
         this.session = session;
     }
 
-    public abstract void control();
+    protected ViewPrototype getViewPrototype() {
+        return ViewPrototype.getInstance(this.session.getViewType());
+    }
+
+    public abstract void control() throws CloneNotSupportedException;
 }

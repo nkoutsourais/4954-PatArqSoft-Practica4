@@ -2,10 +2,11 @@ package mastermind.views.console;
 
 import mastermind.models.SecretCombination;
 import mastermind.utils.WithConsoleModel;
+import mastermind.views.Message;
 
-public class SecretCombinationView extends WithConsoleModel {
+class SecretCombinationConsoleView extends WithConsoleModel {
 
-    public void writeSecretCombination() {
+    void writeSecretCombination() {
         for (int i = 0; i < SecretCombination.getWidth(); i++) {
             this.console.write(Message.SECRET.getMessage());
         }

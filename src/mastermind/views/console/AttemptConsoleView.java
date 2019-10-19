@@ -1,10 +1,11 @@
 package mastermind.views.console;
 
+import mastermind.views.Message;
 import mastermind.utils.WithConsoleModel;
 
-public class AttemptView extends WithConsoleModel {
+class AttemptConsoleView extends WithConsoleModel {
 
-    public void writeln(int attemps) {
+    void writeln(int attemps) {
         this.console.writeln(Message.ATTEMPTS.getMessage().replaceAll("#attempts", "" + attemps));
     }
 }

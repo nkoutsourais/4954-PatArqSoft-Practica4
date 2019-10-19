@@ -2,10 +2,11 @@ package mastermind.views.console;
 
 import mastermind.models.Result;
 import mastermind.utils.WithConsoleModel;
+import mastermind.views.Message;
 
-public class ResultView extends WithConsoleModel {
+class ResultConsoleView extends WithConsoleModel {
 
-    public void writeln(Result result) {
+    void writeln(Result result) {
         this.console.writeln(Message.RESULT.getMessage().replaceFirst("#blacks", "" + result.getBlacks())
                 .replaceFirst("#whites", "" + result.getWhites()));
     }

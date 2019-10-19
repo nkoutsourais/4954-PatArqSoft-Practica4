@@ -5,16 +5,17 @@ import java.util.List;
 import mastermind.models.*;
 import mastermind.models.Error;
 import mastermind.utils.WithConsoleModel;
+import mastermind.views.Message;
 
-public class ProposedCombinationView extends WithConsoleModel {
+class ProposedCombinationConsoleView extends WithConsoleModel {
 
-	public void write(ProposedCombination proposedCombination) {
+	void write(ProposedCombination proposedCombination) {
 		for (Color color : proposedCombination.getColors()) {
-			new ColorView(color).write();
+			new ColorConsoleView(color).write();
 		}
 	}
 
-	public ProposedCombination read() {
+	ProposedCombination read() {
 		Error error;
 		List<Color> colors = new ArrayList<Color>();
 		do {
@@ -39,7 +40,7 @@ public class ProposedCombinationView extends WithConsoleModel {
 				}
 			}
 			if (error != null) {
-				new ErrorView(error).writeln();
+				new ErrorConsoleView(error).writeln();
 				while (!colors.isEmpty()) {
 					colors.remove(0);
 				}

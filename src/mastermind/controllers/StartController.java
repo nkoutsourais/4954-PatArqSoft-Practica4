@@ -1,7 +1,8 @@
 package mastermind.controllers;
 
 import mastermind.models.Session;
-import mastermind.views.console.StarView;
+import mastermind.views.StartView;
+import mastermind.views.ViewGameType;
 
 public class StartController extends Controller {
 
@@ -10,8 +11,9 @@ public class StartController extends Controller {
     }
 
     @Override
-    public void control() {
-        new StarView().writeln();
+    public void control() throws CloneNotSupportedException {
+        StartView startview = (StartView)getViewPrototype().getView(ViewGameType.START);
+        startview.writeln();
         this.session.next();
     }
 }

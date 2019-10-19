@@ -1,6 +1,6 @@
-package mastermind.views.console;
+package mastermind.views;
 
-enum Message {
+public enum Message {
 
 	ATTEMPTS("#attempts attempt(s): "), 
 	SECRET("*"), 

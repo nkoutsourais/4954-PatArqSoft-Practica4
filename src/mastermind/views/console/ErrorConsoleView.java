@@ -3,15 +3,15 @@ package mastermind.views.console;
 import mastermind.utils.WithConsoleModel;
 import mastermind.models.Error;
 
-public class ErrorView extends WithConsoleModel  {
+class ErrorConsoleView extends WithConsoleModel  {
 
 	private final Error error;
 
-	public ErrorView(Error error) {
+	ErrorConsoleView(Error error) {
 		this.error = error;
 	}
 	
-	public void writeln() {
+	void writeln() {
 		this.console.writeln(error.getMessage());
 	}	
 }

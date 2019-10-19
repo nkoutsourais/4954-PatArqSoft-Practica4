@@ -1,14 +1,23 @@
 package mastermind.models;
 
+import mastermind.views.ViewType;
+
 public class Session {
 
     private Game game;
 
     private State state;
 
-    public Session() {
+    private final ViewType viewType;
+
+    public Session(ViewType viewType) {
         this.game = new Game();
         this.state = new State();
+        this.viewType = viewType;
+    }
+
+    public ViewType getViewType() {
+        return this.viewType;
     }
 
     public void resume() {

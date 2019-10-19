@@ -3,15 +3,15 @@ package mastermind.views.console;
 import mastermind.models.Color;
 import mastermind.utils.WithConsoleModel;
 
-public class ColorView extends WithConsoleModel {
+class ColorConsoleView extends WithConsoleModel {
 
 	private final Color color;
 
-	public ColorView(Color color) {
+	ColorConsoleView(Color color) {
 		this.color = color;
 	}
 	
-	public void write() {
+	void write() {
 		this.console.write(this.color.getInitial());
 	}
 }

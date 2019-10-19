@@ -9,6 +9,7 @@ import mastermind.controllers.ResumeController;
 import mastermind.controllers.StartController;
 import mastermind.models.Session;
 import mastermind.models.StateValue;
+import mastermind.views.ViewType;
 
 public class Mastermind {
 
@@ -16,8 +17,8 @@ public class Mastermind {
 
     private Map<StateValue, Controller> controllers;
 
-    public Mastermind() {
-        this.session = new Session();
+    public Mastermind(ViewType viewType) {
+        this.session = new Session(viewType);
         this.controllers = new HashMap<>();
         this.controllers.put(StateValue.INITIAL, new StartController(this.session));
         this.controllers.put(StateValue.IN_GAME, new ProposeCombinationController(this.session));
@@ -29,7 +30,7 @@ public class Mastermind {
         return this.controllers.get(this.session.getValueState());
     }
 
-    public void play() {
+    public void play() throws CloneNotSupportedException {
         Controller controller;
         do {
             controller = this.getController();
@@ -38,7 +39,8 @@ public class Mastermind {
         } while (controller != null);
     }
 
-    public static void main(String[] args) {
-        new Mastermind().play();
+    public static void main(String[] args) throws CloneNotSupportedException {
+        ViewType viewType = ViewType.CONSOLE;
+        new Mastermind(viewType).play();
     }
 }
