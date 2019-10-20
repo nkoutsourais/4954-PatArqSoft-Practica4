@@ -91,7 +91,16 @@ ViewTypePrototype --> View
 ViewPrototype *--> ViewConsolePrototype
 ViewPrototype *--> ViewGraphicPrototype
 
-enum ViewType
+enum ViewType {
+  CONSOLE
+  GRAPHIC
+}
+  
+enum ViewGameType {
+  START
+  GAME
+  RESUME
+}
 
 package mastermind.views.console {
 class StartConsoleView
