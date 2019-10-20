@@ -1,8 +1,10 @@
 package mastermind.controllers;
 
-import mastermind.models.*;
+import mastermind.models.ProposedCombination;
+import mastermind.models.Session;
 import mastermind.views.GameView;
 import mastermind.views.ViewGameType;
+import mastermind.views.ViewPrototype;
 
 public class ProposeCombinationController extends Controller {
 
@@ -12,7 +14,7 @@ public class ProposeCombinationController extends Controller {
 
     @Override
     public void control() throws CloneNotSupportedException {
-        GameView gameView = (GameView)getViewPrototype().getView(ViewGameType.GAME);
+        GameView gameView = (GameView)ViewPrototype.getInstance().getView(session.getViewType(), ViewGameType.GAME);
         ProposedCombination proposedCombination = gameView.read();
         this.session.addProposedCombination(proposedCombination);
         gameView.writeGame(this.session.getGame());
