@@ -3,7 +3,7 @@ package mastermind.controllers;
 import mastermind.models.ProposedCombination;
 import mastermind.models.Session;
 import mastermind.views.GameView;
-import mastermind.views.ViewPrototype;
+import mastermind.views.prototype.ViewPrototype;
 
 public class ProposeCombinationController extends Controller {
 

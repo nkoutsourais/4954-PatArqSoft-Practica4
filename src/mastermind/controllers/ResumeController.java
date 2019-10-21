@@ -2,7 +2,7 @@ package mastermind.controllers;
 
 import mastermind.models.Session;
 import mastermind.views.ResumeView;
-import mastermind.views.ViewPrototype;
+import mastermind.views.prototype.ViewPrototype;
 
 public class ResumeController extends Controller {
 

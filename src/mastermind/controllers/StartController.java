@@ -2,7 +2,7 @@ package mastermind.controllers;
 
 import mastermind.models.Session;
 import mastermind.views.StartView;
-import mastermind.views.ViewPrototype;
+import mastermind.views.prototype.ViewPrototype;
 
 public class StartController extends Controller {
 

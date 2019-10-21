@@ -9,7 +9,7 @@ import mastermind.controllers.ResumeController;
 import mastermind.controllers.StartController;
 import mastermind.models.Session;
 import mastermind.models.StateValue;
-import mastermind.views.ViewType;
+import mastermind.views.prototype.ViewType;
 
 public class Mastermind {
 

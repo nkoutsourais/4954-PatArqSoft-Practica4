@@ -51,6 +51,7 @@ Mastermind *-down-> ProposalController
 Mastermind *-down-> ResumeController 
 
 package mastermind.views {
+package mastermind.views.prototype {
 class ViewPrototype << (S,#FF7700) Singleton >> {
  - Map<ViewType, ViewTypePrototype> viewsMap
  - {static} ViewPrototype viewPrototype
@@ -63,6 +64,19 @@ ViewPrototype *-down-> ViewType
 
 interface ViewTypePrototype {
     + View getView(StateValue)
+}
+
+ViewTypePrototype ()-- ViewConsolePrototype
+ViewTypePrototype ()-- ViewGraphicPrototype
+
+ViewPrototype *--> ViewConsolePrototype
+ViewPrototype *--> ViewGraphicPrototype
+
+enum ViewType {
+  CONSOLE
+  GRAPHIC
+}
+
 }
 
 interface View
@@ -82,16 +96,7 @@ View <|-down- StartView
 View <|-down- GameView
 View <|-down- ResumeView
 
-ViewTypePrototype ()-- ViewConsolePrototype
-ViewTypePrototype ()-- ViewGraphicPrototype
 
-ViewPrototype *--> ViewConsolePrototype
-ViewPrototype *--> ViewGraphicPrototype
-
-enum ViewType {
-  CONSOLE
-  GRAPHIC
-}
 
 package mastermind.views.console {
 class StartConsoleView

@@ -1,6 +1,6 @@
 package mastermind.models;
 
-import mastermind.views.ViewType;
+import mastermind.views.prototype.ViewType;
 
 public class Session {
 

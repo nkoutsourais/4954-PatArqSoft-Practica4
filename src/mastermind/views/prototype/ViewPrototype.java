@@ -1,9 +1,10 @@
-package mastermind.views;
+package mastermind.views.prototype;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import mastermind.models.Session;
+import mastermind.views.View;
 
 public class ViewPrototype {
 

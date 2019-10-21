@@ -1,4 +1,4 @@
-package mastermind.views;
+package mastermind.views.prototype;
 
 public enum ViewType {
     CONSOLE, GRAPHIC;

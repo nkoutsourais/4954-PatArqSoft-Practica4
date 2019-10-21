@@ -1,9 +1,10 @@
-package mastermind.views;
+package mastermind.views.prototype;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import mastermind.models.StateValue;
+import mastermind.views.View;
 import mastermind.views.console.GameConsoleView;
 import mastermind.views.console.ResumeConsoleView;
 import mastermind.views.console.StartConsoleView;
