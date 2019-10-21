@@ -8,7 +8,7 @@
 ## Diagrama MasterMind
 
 <p align="center">
-  <img alt="" src="plantuml.svg">
+  <img alt="" src="0c06839d94ecfbfd.png">
 </p>
 
 ### PlantUML
