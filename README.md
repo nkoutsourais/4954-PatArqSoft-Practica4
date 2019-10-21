@@ -56,13 +56,13 @@ class ViewPrototype << (S,#FF7700) Singleton >> {
  - {static} ViewPrototype viewPrototype
  + ViewPrototype getInstance()
  - ViewPrototype()
- + View getView(ViewType, ViewGameType)
+ + View getView(Session)
 }
 
 ViewPrototype *-down-> ViewType
 
 interface ViewTypePrototype {
-    + View getView(ViewGameType)
+    + View getView(StateValue)
 }
 
 interface View
@@ -85,21 +85,12 @@ View <|-down- ResumeView
 ViewTypePrototype ()-- ViewConsolePrototype
 ViewTypePrototype ()-- ViewGraphicPrototype
 
-ViewTypePrototype --> ViewGameType
-ViewTypePrototype --> View
-
 ViewPrototype *--> ViewConsolePrototype
 ViewPrototype *--> ViewGraphicPrototype
 
 enum ViewType {
   CONSOLE
   GRAPHIC
-}
-  
-enum ViewGameType {
-  START
-  GAME
-  RESUME
 }
 
 package mastermind.views.console {
@@ -133,13 +124,20 @@ ResumeController *-down-> ViewPrototype
 
 package mastermind.models {
 class Session
-class State 
+enum StateValue {
+  INITIAL 
+  IN_GAME
+  FINAL
+  EXIT
+}
 class Game
 
-Session *-down-> State 
+Session *-down-> StateValue 
 Session *-down-> Game 
 }
 
+ViewTypePrototype --> StateValue
+ViewTypePrototype --> View
 
 Session *-down-> ViewType
 

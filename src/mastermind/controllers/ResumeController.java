@@ -2,7 +2,6 @@ package mastermind.controllers;
 
 import mastermind.models.Session;
 import mastermind.views.ResumeView;
-import mastermind.views.ViewGameType;
 import mastermind.views.ViewPrototype;
 
 public class ResumeController extends Controller {
@@ -13,7 +12,7 @@ public class ResumeController extends Controller {
 
     @Override
     public void control() throws CloneNotSupportedException {
-        ResumeView resumeView = (ResumeView)ViewPrototype.getInstance().getView(session.getViewType(), ViewGameType.RESUME);
+        ResumeView resumeView = (ResumeView)ViewPrototype.getInstance().getView(session);
         resumeView.writeFinalResult(session.isWinner());
         if (resumeView.readNewGame()) {
             this.session.resume();

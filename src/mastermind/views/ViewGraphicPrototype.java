@@ -3,14 +3,16 @@ package mastermind.views;
 import java.util.HashMap;
 import java.util.Map;
 
+import mastermind.models.StateValue;
+
 class ViewGraphicPrototype implements ViewTypePrototype {
 
-    private Map<ViewGameType, View> viewsMap = new HashMap<>();
+    private Map<StateValue, View> viewsMap = new HashMap<>();
 
     ViewGraphicPrototype() {
     }
 
-    public View getView(ViewGameType viewGameType) throws CloneNotSupportedException {
-        return (View) this.viewsMap.get(viewGameType).clone();
+    public View getView(StateValue stateValue) throws CloneNotSupportedException {
+        return (View) this.viewsMap.get(stateValue).clone();
     }
 }

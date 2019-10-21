@@ -3,21 +3,22 @@ package mastermind.views;
 import java.util.HashMap;
 import java.util.Map;
 
+import mastermind.models.StateValue;
 import mastermind.views.console.GameConsoleView;
 import mastermind.views.console.ResumeConsoleView;
 import mastermind.views.console.StartConsoleView;
 
 class ViewConsolePrototype implements ViewTypePrototype {
 
-    private Map<ViewGameType, View> viewsMap = new HashMap<>();
+    private Map<StateValue, View> viewsMap = new HashMap<>();
 
     ViewConsolePrototype() {
-        viewsMap.put(ViewGameType.START, new StartConsoleView());
-        viewsMap.put(ViewGameType.GAME, new GameConsoleView());
-        viewsMap.put(ViewGameType.RESUME, new ResumeConsoleView());
+        viewsMap.put(StateValue.INITIAL, new StartConsoleView());
+        viewsMap.put(StateValue.IN_GAME, new GameConsoleView());
+        viewsMap.put(StateValue.FINAL, new ResumeConsoleView());
     }
 
-    public View getView(ViewGameType viewGameType) throws CloneNotSupportedException {
-        return (View) this.viewsMap.get(viewGameType).clone();
+    public View getView(StateValue stateValue) throws CloneNotSupportedException {
+        return (View) this.viewsMap.get(stateValue).clone();
     }
 }

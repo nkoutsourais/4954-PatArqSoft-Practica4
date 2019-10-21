@@ -1,5 +1,7 @@
 package mastermind.views;
 
+import mastermind.models.StateValue;
+
 interface ViewTypePrototype {
-    View getView(ViewGameType viewGameType) throws CloneNotSupportedException;
+    View getView(StateValue stateValue) throws CloneNotSupportedException;
 }

@@ -3,6 +3,8 @@ package mastermind.views;
 import java.util.HashMap;
 import java.util.Map;
 
+import mastermind.models.Session;
+
 public class ViewPrototype {
 
     private Map<ViewType, ViewTypePrototype> viewsMap = new HashMap<>();
@@ -21,7 +23,7 @@ public class ViewPrototype {
         viewsMap.put(ViewType.GRAPHIC, new ViewGraphicPrototype());
     }
 
-    public View getView(ViewType viewType, ViewGameType viewGameType) throws CloneNotSupportedException {
-        return (View) this.viewsMap.get(viewType).getView(viewGameType);
+    public View getView(Session session) throws CloneNotSupportedException {
+        return (View) this.viewsMap.get(session.getViewType()).getView(session.getValueState());
     }
 }
